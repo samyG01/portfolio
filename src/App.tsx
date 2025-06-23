@@ -136,17 +136,6 @@ function App() {
       src="../src/profile.jpeg" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
-      onError={(e) => {
-        e.currentTarget.onerror = null;
-        e.currentTarget.src = '';
-        e.currentTarget.parentElement.innerHTML = `
-          <div class="text-center text-gray-600">
-            <Code size={60} class="mx-auto mb-4 opacity-50" />
-            <p class="font-medium">profile</p>
-            <p class="text-sm">Placeholder</p>
-          </div>
-        `;
-      }}
     />
       </div>
     </div>
@@ -244,17 +233,7 @@ function App() {
       src="../src/dr.jpeg" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
-      onError={(e) => {
-        e.currentTarget.onerror = null;
-        e.currentTarget.src = '';
-        e.currentTarget.parentElement.innerHTML = `
-          <div class="text-center text-gray-600">
-            <Code size={60} class="mx-auto mb-4 opacity-50" />
-            <p class="font-medium">Daily Radar Logo</p>
-            <p class="text-sm">Placeholder</p>
-          </div>
-        `;
-      }}
+      
     />
               </div>
               <div className="p-8">
@@ -294,21 +273,10 @@ function App() {
             {/* Sportiva Project */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center">
-              <<img 
+              <img 
       src="../src/so.png" 
       alt="Daily Radar Logo" 
-      className="max-h-40 max-w-full object-contain" 
-      onError={(e) => {
-        e.currentTarget.onerror = null;
-        e.currentTarget.src = '';
-        e.currentTarget.parentElement.innerHTML = `
-          <div class="text-center text-gray-600">
-            <Code size={60} class="mx-auto mb-4 opacity-50" />
-            <p class="font-medium"> Logo</p>
-            <p class="text-sm">Placeholder</p>
-          </div>
-        `;
-      }}
+     
     />
               </div>
               <div className="p-8">
