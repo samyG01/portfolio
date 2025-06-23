@@ -134,12 +134,18 @@ function App() {
       <div className="text-center text-gray-500 hidden fallback-content">
         <img 
       src="../src/profile.jpeg" 
-      alt="Profile" 
+      alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
       onError={(e) => {
         e.currentTarget.onerror = null;
-        e.currentTarget.src = '../src/profile.jpeg';
-        
+        e.currentTarget.src = '';
+        e.currentTarget.parentElement.innerHTML = `
+          <div class="text-center text-gray-600">
+            <Code size={60} class="mx-auto mb-4 opacity-50" />
+            <p class="font-medium">profile</p>
+            <p class="text-sm">Placeholder</p>
+          </div>
+        `;
       }}
     />
       </div>
@@ -235,13 +241,19 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-navy-100 to-navy-200 flex items-center justify-center">
               <img 
-      src="../src/dr.png" 
+      src="../src/dr.jpeg" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
       onError={(e) => {
         e.currentTarget.onerror = null;
-        e.currentTarget.src = '../src/dr.png';
-        
+        e.currentTarget.src = '';
+        e.currentTarget.parentElement.innerHTML = `
+          <div class="text-center text-gray-600">
+            <Code size={60} class="mx-auto mb-4 opacity-50" />
+            <p class="font-medium">Daily Radar Logo</p>
+            <p class="text-sm">Placeholder</p>
+          </div>
+        `;
       }}
     />
               </div>
@@ -282,19 +294,26 @@ function App() {
             {/* Sportiva Project */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center">
-              <img 
+              <<img 
       src="../src/so.png" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
       onError={(e) => {
         e.currentTarget.onerror = null;
         e.currentTarget.src = '';
+        e.currentTarget.parentElement.innerHTML = `
+          <div class="text-center text-gray-600">
+            <Code size={60} class="mx-auto mb-4 opacity-50" />
+            <p class="font-medium"> Logo</p>
+            <p class="text-sm">Placeholder</p>
+          </div>
+        `;
       }}
     />
               </div>
               <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Sportiva</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Sportova</h3>
                   <a 
                     href="https://sportiva.site" 
                     target="_blank" 
@@ -316,7 +335,7 @@ function App() {
                   <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Live Scores</span>
                 </div>
                 <a 
-                  href="https://sportiva.site" 
+                  href="https://sportova.site" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-navy-600 hover:text-navy-800 font-medium transition-colors"
