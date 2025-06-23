@@ -300,7 +300,7 @@ function App() {
               </div>
               <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Sportiva</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Sportova</h3>
                   <a 
                     href="https://sportiva.site" 
                     target="_blank" 
