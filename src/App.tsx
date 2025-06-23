@@ -133,8 +133,22 @@ function App() {
     <div className="w-80 h-80 bg-gradient-to-br from-navy-100 to-slate-100 rounded-2xl flex items-center justify-center border-4 border-white shadow-2xl profile-image" style={{ backgroundImage: `url('../src/profile.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="text-center text-gray-500 hidden fallback-content">
         <User  size={80} className="mx-auto mb-4 opacity-30" />
-        <p className="font-medium">Your Profile Photo</p>
-        <p className="text-sm">Goes Here</p>
+         <img 
+      src="../src/profile.jpeg" 
+      alt="Daily Radar Logo" 
+      className="max-h-40 max-w-full object-contain" 
+      onError={(e) => {
+        e.currentTarget.onerror = null;
+        e.currentTarget.src = '';
+        e.currentTarget.parentElement.innerHTML = `
+          <div class="text-center text-gray-600">
+            <Code size={60} class="mx-auto mb-4 opacity-50" />
+            <p class="font-medium">Daily Radar Logo</p>
+            <p class="text-sm">Placeholder</p>
+          </div>
+        `;
+      }}
+    />
       </div>
     </div>
     <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
@@ -322,7 +336,7 @@ function App() {
                   <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Live Scores</span>
                 </div>
                 <a 
-                  href="https://sportiva.site" 
+                  href="https://sportova.site" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-navy-600 hover:text-navy-800 font-medium transition-colors"
