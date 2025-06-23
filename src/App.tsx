@@ -133,7 +133,7 @@ function App() {
     <div className="w-80 h-80 bg-gradient-to-br from-navy-100 to-slate-100 rounded-2xl flex items-center justify-center border-4 border-white shadow-2xl profile-image" style={{ backgroundImage: `url('../src/profile.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="text-center text-gray-500 hidden fallback-content">
         <img 
-      src="../src/profile.jpeg" 
+      src="profile.jpeg" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
     />
@@ -230,7 +230,7 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-navy-100 to-navy-200 flex items-center justify-center">
               <img 
-      src="../src/dr.jpeg" 
+      src="dr.jpeg" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
       
@@ -274,7 +274,7 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center">
               <img 
-      src="../src/so.png" 
+      src="so.png" 
       alt="Daily Radar Logo" 
      
     />
