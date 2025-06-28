@@ -129,7 +129,6 @@ function App() {
             </div>
 
             <div className="flex justify-center">
-<<<<<<< HEAD
               <div className="relative">
                 <div className="w-80 h-80 bg-gradient-to-br from-navy-100 to-slate-100 rounded-2xl flex items-center justify-center border-4 border-white shadow-2xl profile-image" style={{ backgroundImage: `url('/profile.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                   <div className="text-center text-gray-500 hidden fallback-content">
@@ -158,21 +157,6 @@ function App() {
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
               </div>
             </div>
-=======
-  <div className="relative">
-    <div className="w-80 h-80 bg-gradient-to-br from-navy-100 to-slate-100 rounded-2xl flex items-center justify-center border-4 border-white shadow-2xl profile-image" style={{ backgroundImage: `url('../src/profile.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="text-center text-gray-500 hidden fallback-content">
-        <img 
-      src="profile.jpeg" 
-      alt="Daily Radar Logo" 
-      className="max-h-40 max-w-full object-contain" 
-    />
-      </div>
-    </div>
-    <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
-  </div>
-</div>
->>>>>>> b16afff99a06ed09c123591932293765e25b93e0
 
           </div>
 
@@ -261,7 +245,6 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-navy-100 to-navy-200 flex items-center justify-center">
               <img 
-<<<<<<< HEAD
       src="/dr.png" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
@@ -279,12 +262,6 @@ function App() {
           `;
         }
       }}
-=======
-      src="dr.jpeg" 
-      alt="Daily Radar Logo" 
-      className="max-h-40 max-w-full object-contain" 
-      
->>>>>>> b16afff99a06ed09c123591932293765e25b93e0
     />
               </div>
               <div className="p-8">
@@ -309,7 +286,6 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
               <img 
-<<<<<<< HEAD
       src="/so.png" 
       alt="Student Hub Logo" 
       className="max-h-40 max-w-full object-contain" 
@@ -333,22 +309,6 @@ function App() {
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">Student Hub</h3>
                   <a href="https://student-hub-rho.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-navy-600 hover:text-navy-700 transition-colors">
-=======
-      src="so.png" 
-      alt="Daily Radar Logo" 
-     
-    />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Sportova</h3>
-                  <a 
-                    href="https://sportiva.site" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-navy-600 hover:text-navy-800 transition-colors"
-                  >
->>>>>>> b16afff99a06ed09c123591932293765e25b93e0
                     <ExternalLink size={20} />
                   </a>
                 </div>
@@ -360,7 +320,6 @@ function App() {
                   <span className="bg-slate-200 text-slate-800 px-3 py-1 rounded-full text-sm font-medium">Spring Boot</span>
                   <span className="bg-slate-200 text-slate-800 px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
                 </div>
-<<<<<<< HEAD
               </div>
             </div>
           </div>
@@ -398,16 +357,6 @@ function App() {
               <img src="/1 (4).png" alt="Gallery image 4" className="w-full h-full object-cover rounded-lg shadow-md" />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <p className="text-white text-lg font-semibold">Caption 4</p>
-=======
-                <a 
-                  href="https://sportova.site" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-navy-600 hover:text-navy-800 font-medium transition-colors"
-                >
-                  Visit Live Site <ExternalLink size={16} className="ml-2" />
-                </a>
->>>>>>> b16afff99a06ed09c123591932293765e25b93e0
               </div>
             </div>
           </div>
@@ -520,8 +469,4 @@ function App() {
   );
 }
 
-<<<<<<< HEAD
 export default App; 
-=======
-export default App;
->>>>>>> b16afff99a06ed09c123591932293765e25b93e0
