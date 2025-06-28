@@ -122,24 +122,41 @@ function App() {
                 <a href="https://www.linkedin.com/in/samy-himbazimana/" className="text-gray-600 hover:text-navy-600 transition-colors">
                   <Linkedin size={24} />
                 </a>
-                <a href="" className="text-gray-600 hover:text-navy-600 transition-colors">
+                <a href="mailto:samuelhimbaza@gmail.com" className="text-gray-600 hover:text-navy-600 transition-colors">
                   <Mail size={24} />
                 </a>
               </div>
             </div>
 
             <div className="flex justify-center">
-  <div className="relative">
-    <div className="w-80 h-80 bg-gradient-to-br from-navy-100 to-slate-100 rounded-2xl flex items-center justify-center border-4 border-white shadow-2xl profile-image" style={{ backgroundImage: `url('../src/profile.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="text-center text-gray-500 hidden fallback-content">
-        <User  size={80} className="mx-auto mb-4 opacity-30" />
-        <p className="font-medium">Your Profile Photo</p>
-        <p className="text-sm">Goes Here</p>
-      </div>
-    </div>
-    <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
-  </div>
-</div>
+              <div className="relative">
+                <div className="w-80 h-80 bg-gradient-to-br from-navy-100 to-slate-100 rounded-2xl flex items-center justify-center border-4 border-white shadow-2xl profile-image" style={{ backgroundImage: `url('/profile.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                  <div className="text-center text-gray-500 hidden fallback-content">
+                    <User  size={80} className="mx-auto mb-4 opacity-30" />
+                   <img 
+                      src="/profile.jpeg" 
+                      alt="Profile" 
+                      className="max-h-40 max-w-full object-contain" 
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          parent.innerHTML = `
+                            <div class="text-center text-gray-600">
+                              <Code size={60} class="mx-auto mb-4 opacity-50" />
+                              <p class="font-medium">Profile Image</p>
+                              <p class="text-sm">Placeholder</p>
+                            </div>
+                          `;
+                        }
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+              </div>
+            </div>
 
           </div>
 
@@ -228,107 +245,118 @@ function App() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-64 bg-gradient-to-br from-navy-100 to-navy-200 flex items-center justify-center">
               <img 
-      src="../src/dr.png" 
+      src="/dr.png" 
       alt="Daily Radar Logo" 
       className="max-h-40 max-w-full object-contain" 
       onError={(e) => {
         e.currentTarget.onerror = null;
         e.currentTarget.src = '';
-        e.currentTarget.parentElement.innerHTML = `
-          <div class="text-center text-gray-600">
-            <Code size={60} class="mx-auto mb-4 opacity-50" />
-            <p class="font-medium">Daily Radar Logo</p>
-            <p class="text-sm">Placeholder</p>
-          </div>
-        `;
+        const parent = e.currentTarget.parentElement;
+        if (parent) {
+          parent.innerHTML = `
+            <div class="text-center text-gray-600">
+              <Code size={60} class="mx-auto mb-4 opacity-50" />
+              <p class="font-medium">Daily Radar Logo</p>
+              <p class="text-sm">Placeholder</p>
+            </div>
+          `;
+        }
       }}
     />
               </div>
               <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex justify-between items-center mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">Daily Radar</h3>
-                  <a 
-                    href="https://dailyradar.site" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-navy-600 hover:text-navy-800 transition-colors"
-                  >
+                  <a href="https://daily-radar.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-navy-600 hover:text-navy-700 transition-colors">
                     <ExternalLink size={20} />
                   </a>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  A comprehensive media platform delivering the latest in entertainment and political news. 
-                  Built with modern web technologies to provide users with real-time updates, engaging content, 
-                  and an intuitive reading experience across all devices.
+                <p className="text-gray-600 mb-6">
+                  A dynamic news aggregator that provides real-time updates from a variety of sources. Built with React and powered by a custom news API, it delivers a personalized and engaging user experience.
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 bg-navy-100 text-navy-800 rounded-full text-sm font-medium">React</span>
-                  <span className="px-3 py-1 bg-slate-100 text-slate-800 rounded-full text-sm font-medium">Spring Boot</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">News API</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Responsive Design</span>
+                <div className="flex flex-wrap gap-3">
+                  <span className="bg-navy-100 text-navy-800 px-3 py-1 rounded-full text-sm font-medium">React</span>
+                  <span className="bg-navy-100 text-navy-800 px-3 py-1 rounded-full text-sm font-medium">News API</span>
+                  <span className="bg-navy-100 text-navy-800 px-3 py-1 rounded-full text-sm font-medium">Vercel</span>
                 </div>
-                <a 
-                  href="https://dailyradar.site" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-navy-600 hover:text-navy-800 font-medium transition-colors"
-                >
-                  Visit Live Site <ExternalLink size={16} className="ml-2" />
-                </a>
               </div>
             </div>
 
-            {/* Sportiva Project */}
+            {/* Student Hub Project */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-64 bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center">
+              <div className="h-64 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
               <img 
-      src="../src/so.png" 
-      alt="Daily Radar Logo" 
+      src="/so.png" 
+      alt="Student Hub Logo" 
       className="max-h-40 max-w-full object-contain" 
       onError={(e) => {
         e.currentTarget.onerror = null;
         e.currentTarget.src = '';
-        e.currentTarget.parentElement.innerHTML = `
-          <div class="text-center text-gray-600">
-            <Code size={60} class="mx-auto mb-4 opacity-50" />
-            <p class="font-medium">Daily Radar Logo</p>
-            <p class="text-sm">Placeholder</p>
-          </div>
-        `;
+        const parent = e.currentTarget.parentElement;
+        if (parent) {
+          parent.innerHTML = `
+            <div class="text-center text-gray-600">
+              <Code size={60} class="mx-auto mb-4 opacity-50" />
+              <p class="font-medium">Student Hub Logo</p>
+              <p class="text-sm">Placeholder</p>
+            </div>
+          `;
+        }
       }}
     />
               </div>
               <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Sportiva</h3>
-                  <a 
-                    href="https://sportiva.site" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-navy-600 hover:text-navy-800 transition-colors"
-                  >
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">Student Hub</h3>
+                  <a href="https://student-hub-rho.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-navy-600 hover:text-navy-700 transition-colors">
                     <ExternalLink size={20} />
                   </a>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  A dynamic sports news platform that keeps fans updated with the latest scores, news, and analysis. 
-                  Features real-time data feeds, interactive scoreboards, and an intuitive user interface designed 
-                  for the ultimate sports content experience.
+                <p className="text-gray-600 mb-6">
+                  An integrated platform for students to manage their academic activities, access resources, and collaborate with peers. Built with a responsive UI and a robust Spring Boot backend.
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 bg-navy-100 text-navy-800 rounded-full text-sm font-medium">React</span>
-                  <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Sports API</span>
-                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Real-time Data</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Live Scores</span>
+                <div className="flex flex-wrap gap-3">
+                  <span className="bg-slate-200 text-slate-800 px-3 py-1 rounded-full text-sm font-medium">React</span>
+                  <span className="bg-slate-200 text-slate-800 px-3 py-1 rounded-full text-sm font-medium">Spring Boot</span>
+                  <span className="bg-slate-200 text-slate-800 px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
                 </div>
-                <a 
-                  href="https://sportiva.site" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-navy-600 hover:text-navy-800 font-medium transition-colors"
-                >
-                  Visit Live Site <ExternalLink size={16} className="ml-2" />
-                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Gallery</h2>
+            <div className="w-20 h-1 bg-navy-600 mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="group relative">
+              <img src="/1 (1).png" alt="Gallery image 1" className="w-full h-full object-cover rounded-lg shadow-md" />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p className="text-white text-lg font-semibold">Caption 1</p>
+              </div>
+            </div>
+            <div className="group relative">
+              <img src="/1 (2).png" alt="Gallery image 2" className="w-full h-full object-cover rounded-lg shadow-md" />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p className="text-white text-lg font-semibold">Caption 2</p>
+              </div>
+            </div>
+            <div className="group relative">
+              <img src="/1 (3).png" alt="Gallery image 3" className="w-full h-full object-cover rounded-lg shadow-md" />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p className="text-white text-lg font-semibold">Caption 3</p>
+              </div>
+            </div>
+            <div className="group relative">
+              <img src="/1 (4).png" alt="Gallery image 4" className="w-full h-full object-cover rounded-lg shadow-md" />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p className="text-white text-lg font-semibold">Caption 4</p>
               </div>
             </div>
           </div>
@@ -342,176 +370,98 @@ function App() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
             <div className="w-20 h-1 bg-navy-600 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together to bring your ideas to life.
+              I'm currently available for freelance work and open to new opportunities. 
+              Feel free to reach out with any inquiries or just to say hello!
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-navy-100 rounded-lg flex items-center justify-center">
-                      <Mail className="text-navy-600" size={20} />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">Email</p>
-                      <p className="text-gray-600">[hizsamy01@gmail.com]</p>
-                    </div>
+            {/* Contact Form */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                    <input type="text" name="name" id="name" required value={formData.name} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-navy-500 focus:border-navy-500" />
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                      <Phone className="text-green-600" size={20} />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">Phone</p>
-                      <p className="text-gray-600">[+250 790 395 057]</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-navy-100 rounded-lg flex items-center justify-center">
-                      <MapPin className="text-navy-600" size={20} />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">Location</p>
-                      <p className="text-gray-600">[Kigali, Rwanda]</p>
-                    </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" name="email" id="email" required value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-navy-500 focus:border-navy-500" />
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Follow Me</h3>
-                <div className="flex space-x-4">
-                  <a href="https://github.com/samyG01" className="w-12 h-12 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors">
-                    <Github size={20} />
-                  </a>
-                  <a href="https://www.linkedin.com/in/samy-himbazimana/" className="w-12 h-12 bg-navy-600 text-white rounded-lg flex items-center justify-center hover:bg-navy-700 transition-colors">
-                    <Linkedin size={20} />
-                  </a>
-                  <a href="https://accounts.google.com/SignOutOptions?hl=en-GB&continue=https://mail.google.com/mail&service=mail&ec=GBRAFw" className="w-12 h-12 bg-red-500 text-white rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors">
-                    <Mail size={20} />
-                  </a>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                  <input type="text" name="subject" id="subject" required value={formData.subject} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-navy-500 focus:border-navy-500" />
                 </div>
-              </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                  <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-navy-500 focus:border-navy-500"></textarea>
+                </div>
+                <div className="text-right">
+                  <button type="submit" className="bg-navy-600 text-white px-8 py-3 rounded-lg hover:bg-navy-700 transition-colors font-medium flex items-center justify-center w-full sm:w-auto">
+                    Send Message
+                    <Send size={18} className="ml-2" />
+                  </button>
+                </div>
+              </form>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-colors"
-                    placeholder="Your name"
-                  />
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div className="flex items-start space-x-6">
+                <div className="bg-navy-100 p-4 rounded-xl">
+                  <Mail size={24} className="text-navy-600" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-colors"
-                    placeholder="your.email@example.com"
-                  />
+                  <h3 className="text-xl font-semibold text-gray-900">Email</h3>
+                  <p className="text-gray-600">samuelhimbaza@gmail.com</p>
+                  <a href="mailto:samuelhimbaza@gmail.com" className="text-navy-600 hover:underline">Send an email</a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-6">
+                <div className="bg-navy-100 p-4 rounded-xl">
+                  <Phone size={24} className="text-navy-600" />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-colors"
-                    placeholder="Project inquiry"
-                  />
+                  <h3 className="text-xl font-semibold text-gray-900">Phone</h3>
+                  <p className="text-gray-600">+250 788 281 920</p>
+                  <a href="tel:+250788281920" className="text-navy-600 hover:underline">Call me</a>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-6">
+                <div className="bg-navy-100 p-4 rounded-xl">
+                  <MapPin size={24} className="text-navy-600" />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-colors resize-vertical"
-                    placeholder="Tell me about your project..."
-                  ></textarea>
+                  <h3 className="text-xl font-semibold text-gray-900">Location</h3>
+                  <p className="text-gray-600">Kigali, Rwanda</p>
+                  <a href="#" className="text-navy-600 hover:underline">View on map</a>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full bg-navy-600 text-white py-3 px-6 rounded-lg hover:bg-navy-700 transition-colors font-medium flex items-center justify-center space-x-2"
-                >
-                  <Send size={18} />
-                  <span>Send Message</span>
-                </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-navy-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-navy-300 to-slate-300 bg-clip-text text-transparent">
-                Himbazimana Samuel
-              </h3>
-              <p className="text-gray-400 leading-relaxed">
-                Full Stack Developer passionate about creating exceptional digital experiences through clean code, innovative solutions, and modern web technologies.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <button onClick={() => scrollToSection('home')} className="block text-gray-400 hover:text-white transition-colors">Home</button>
-                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors">About</button>
-                <button onClick={() => scrollToSection('projects')} className="block text-gray-400 hover:text-white transition-colors">Projects</button>
-                <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">Contact</button>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Connect</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Github size={24} />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin size={24} />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Mail size={24} />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-navy-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400">
-              © 2024 Himbazimana Samuel. All rights reserved. Built with React & Tailwind CSS.
-            </p>
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-2xl font-bold mb-2">Himbazimana Samuel</p>
+          <p className="text-gray-400 mb-6">
+            © {new Date().getFullYear()} Himbazimana Samuel. All rights reserved.
+          </p>
+          <div className="flex justify-center space-x-6">
+            <a href="https://github.com/samyG01" className="text-gray-400 hover:text-white transition-colors">
+              <Github size={24} />
+            </a>
+            <a href="https://www.linkedin.com/in/samy-himbazimana/" className="text-gray-400 hover:text-white transition-colors">
+              <Linkedin size={24} />
+            </a>
+            <a href="mailto:samuelhimbaza@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+              <Mail size={24} />
+            </a>
           </div>
         </div>
       </footer>
@@ -519,4 +469,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
